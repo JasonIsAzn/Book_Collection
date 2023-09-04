@@ -1,4 +1,6 @@
-<h1>Books#edit</h1>
+<h1>EDIT BOOK</h1>
+<%= button_to 'Remove', book_path(@book), method: 'delete', data: { confirm: 'Are you sure?' } %>
+
 <%= form_with model: @book do |form| %>
   <%= form.text_field :title, placeholder: "title" %>
   <%= form.text_field :author, placeholder: "author" %>
