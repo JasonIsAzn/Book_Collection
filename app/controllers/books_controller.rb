@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -23,10 +23,9 @@ class BooksController < ApplicationController
   end
 
   def update 
-    
-    @book.update(book_params)
-
-    redirect_to book_path(@book)
+    @book.update (book_params)
+  
+    redirect_to book_path(@book), notice: "Your book has been updated."
   end
 
   def destroy

@@ -1,5 +1,12 @@
 <%= stylesheet_link_tag "show" %>
 <div class="container">
+  <div class="flash">
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
   <h1>View Book</h1>
   <h1><%= @book.title %></h1>
   <h2><%= @book.author %></h2>
