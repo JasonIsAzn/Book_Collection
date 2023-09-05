@@ -1,8 +1,40 @@
-<h1>Home Screen</h1>
-<table>
-  <% @books.each do |book| %>
-    <tr>
-      <td><%= link_to book.title, book_path(book) %></td>
-      <td><%= button_to 'Edit', edit_book_path(book), method: 'get'%></td>
+<%= stylesheet_link_tag "home" %>
+<%= javascript_import_module_tag 'home' %>
+<div class="container" >
+  <div class="header" >
+    <div class="search" >Search</div>
+    <div class="lang" >Lang</div>
+    <div class="date" >Date</div>
+    <div class="profile">Profile</div>
+  </div>
+  <div>
+    <div class="qoute-box">
+      <div class="qoute-box-title">  Today's Quote</div>
+      <div class="qoute">"There is more treasure in books than in all the pirate's loot on Treasure Island."</div>
+      <div class="qoute-by">- Walt Disney</div>
+      <div class="qoute-container">
+        <div class="qoute-selected"></div>
+        <div class="qoute-selector">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="books-slider-header">
+    <div class="morning-text">Good Morning</div>
+    <div class="books-slider-subheader">
+      <span>Your Books </span>
+      <span>Show All</span>
+    </div>
+  </div>
+  <ul class="gallery">
+    <% @books.each do |book| %>
+      <div>
+        <%= link_to book.title, book_path(book) %>
+        <%= button_to 'Edit', edit_book_path(book), method: 'get'%>
+      </div>
     <% end %>
-  </table>
+  </ul>
+</div>
