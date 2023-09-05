@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :current_book, only: [:show, :edit, :update, :destroy]
+  before_action :current_book, only: [:show, :edit, :update, :destroy, :delete]
   def index
     @books = Book.all
   end
@@ -26,6 +26,10 @@ class BooksController < ApplicationController
     @book.update (book_params)
   
     redirect_to book_path(@book), notice: "Your book has been updated."
+  end
+
+  def delete
+    
   end
 
   def destroy
