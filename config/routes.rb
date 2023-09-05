@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :books
+  resources :books do
+    member do
+      get :delete
+    end
+  end
+
 end
