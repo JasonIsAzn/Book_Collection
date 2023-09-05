@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "show" %>
+<div class="container">
+  <div class="flash">
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
+  <h1>View Book</h1>
+  <h1><%= @book.title %></h1>
+  <h2><%= @book.author %></h2>
+  <h2><%= @book.price %></h2>
+  <h2><%= @book.published_date %></h2>
+  <%= form_for(@book, method: 'delete') do |f| %>
+    <div >
+      <%= f.submit("Delete Book") %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "new" %>
+<div class="container">
+  <h1>ADD NEW BOOK</h1>
+  <div>
+    <%= form_with model: @book do |form| %>
+      <%= form.text_field :title, placeholder: "title" %>
+      <%= form.text_field :author, placeholder: "author" %>
+      <%= form.text_field :price, placeholder: "price" %>
+      <%= form.text_field :published_date, placeholder: "published date" %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
